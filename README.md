@@ -43,15 +43,18 @@ def fancy_template_type_docx_hash
 after that you can access the generated documents using the below instance methods:
 
 ```ruby
-"my_document_docx_path"
-"my_document_pdf_path"
-"my_document_png_path"
+my_document_docx_path
+
+my_document_pdf_path
+
+my_document_png_path
 ```
 
 the below is the save/delete callbacks
 ```ruby
-"post_my_document_docx"
-"delete_my_document_docx"
+post_my_document_docx
+
+delete_my_document_docx
 ```
 
 ## Development
