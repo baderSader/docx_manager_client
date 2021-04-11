@@ -1,9 +1,5 @@
 # DocxManagerClient
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/docx_manager_client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +18,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+lets say you have `fancy_template_type` defined in your ``docx_manager_server``
+
+to get access to customize `fancy_template_type` add the below to template model:
+**optional
+```ruby
+docx_template template_type: :my_fancy_template
+```
+then pass the new template file to ur model attribute `fancy_template_type_docx_file` and save
+
+
+
+and in the model of document stamp add the below:
+```ruby
+belongs_to_docx_template name: :my_document, belongs_to: :model_template, template_type: :fancy_template_type
+
+def fancy_template_type_docx_hash
+  {
+    name: 'sabri jameel',
+    age:  '99'
+  }
+```
+
+after that you can access the generated documents using the below instance methods:
+
+```ruby
+"my_document_docx_path"
+"my_document_pdf_path"
+"my_document_png_path"
+```
+
+the below is the save/delete callbacks
+```ruby
+"post_my_document_docx"
+"delete_my_document_docx"
+```
 
 ## Development
 
@@ -32,7 +62,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/docx_manager_client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/docx_manager_client/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/baderSader/docx_manager_client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/baderSader/docx_manager_client/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## Code of Conduct
