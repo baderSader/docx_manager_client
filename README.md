@@ -23,7 +23,7 @@ lets say you have `fancy_template_type` defined in your ``docx_manager_server``
 to get access to customize `fancy_template_type` add the below to template model:
 **optional
 ```ruby
-docx_template template_type: :my_fancy_template
+docx_template template_type: :fancy_template
 ```
 then pass the new template file to ur model attribute `fancy_template_type_docx_file` and save
 
